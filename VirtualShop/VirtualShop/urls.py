@@ -19,6 +19,7 @@ from django.urls import path
 import VirtualShop.views as views
 urlpatterns = [
     path('admin/', admin.site.urls), # -> Url que se quiere tener + nombre de la funcion que retorna esa vista en views.py
-    path('home/', views.main_home), # -> Pagina de Home
-    path('buy/', views.buy) # Pagina para pagar
+    path('home/', views.home), # -> Pagina de Home
+    path('buy/', views.buy), # Pagina para pagar
+    path('login/', views.login),
 ]
