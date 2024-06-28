@@ -7,4 +7,5 @@ def buy(request):
     return HttpResponse("Pagina para pagar")
 
 def login(request):
-    return HttpResponse("Pagina de login")
+    doc = open("VirtualShop/TEMPLATES/login_page.html")
+    return HttpResponse(doc)
