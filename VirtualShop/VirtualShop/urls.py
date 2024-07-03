@@ -22,4 +22,5 @@ urlpatterns = [
     path('home/', views.home), # -> Pagina de Home
     path('buy/', views.buy), # Pagina para pagar
     path('login/', views.login),
+    path('register/', views.register)
 ]
