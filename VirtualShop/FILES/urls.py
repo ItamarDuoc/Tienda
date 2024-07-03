@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import FILES.views as views
+
 urlpatterns = [
     path('admin/', admin.site.urls), # -> Url que se quiere tener + nombre de la funcion que retorna esa vista en views.py
     path('home/', views.home), # -> Pagina de Home

@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Pagina de home") # -> Esto debera cambiarse al archivo HTML correspondiente
+    return HttpResponse("VirtualShop\FILES\TEMPLATES\home_page.html") # -> Esto debera cambiarse al archivo HTML correspondiente
 
 def buy(request):
     return HttpResponse("Pagina para pagar")
