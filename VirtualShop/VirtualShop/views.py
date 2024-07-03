@@ -9,3 +9,6 @@ def buy(request):
 def login(request):
     doc = open("VirtualShop/TEMPLATES/login_page.html")
     return HttpResponse(doc)
+
+def register(request):
+    doc = open("VirtualShop/TEMPLATES/register_page.html")
