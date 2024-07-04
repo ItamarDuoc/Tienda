@@ -20,8 +20,12 @@ import VirtualShop.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls), # -> Url que se quiere tener + nombre de la funcion que retorna esa vista en views.py
-    path('home/', views.home), # -> Pagina de Home
     path('buy/', views.buy), # Pagina para pagar
+    path('digimon/', views.digimon),
+    path('evangelion/', views.evangelion),
+    path('home/', views.home), # -> Pagina de Home
     path('login/', views.login),
-    path('register/', views.register)
+    path('pokemon/', views.pokemon),
+    path('register/', views.register),
+    path('simpsons/', views.simpsons)
 ]
