@@ -29,7 +29,11 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="home_page.html"><img src="Images/logo.png" alt="Imagen" height=100>Mega
+                <a class="navbar-brand" href="home_page.html">
+                    {% load static %}
+                    <img src="{% static 'VirtualShop\VirtualShop\static\IMAGES\logo.webp' %}" alt="My image">
+                    
+                    <img src="Images/logo.png" alt="Imagen" height=100>Mega
                     Figuras</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
