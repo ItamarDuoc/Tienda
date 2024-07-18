@@ -1,37 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} contacto {% endblock %}
+{% block title %}Contacto{% endblock %}
 
-    {% block content %}
-    <form action="/contacto/" method="post" class="form-container">
-    {% csrf_token %}
-    <div class="row">
-        <div class="col">
-            <label for="asunto" class="form-label">Asunto</label>
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center text-white" style="color: black !important;">Contacto</h2>
+    <form action="/contacto/" method="post" class="form-container bg-dark p-4 rounded">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="asunto" class="form-label text-white">Asunto</label>
             <select name="asunto" id="asunto" class="form-select">
-              <option value="1">Pregunta</option>
-              <option value="2">Problema con cuenta</option>
-              <option value="3">Recomendacion</option>
-              <option value="4">Otro</option>
+                <option value="1">Pregunta</option>
+                <option value="2">Problema con cuenta</option>
+                <option value="3">Recomendación</option>
+                <option value="4">Otro</option>
             </select>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="correo" class="form-label">Correo</label>
-            <input type="text" class="form-control" name="correo" id="correo">
+        <div class="mb-3">
+            <label for="correo" class="form-label text-white">Correo</label>
+            <input type="email" class="form-control" name="correo" id="correo" required>
         </div>
-    </div>
-    <div class="mb-3">
-        <label for="mensaje" class="form-label">Mensaje</label>
-        <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
-      </div>
-    <div class="row">
-        <div class="col">
-          <br>
-          <input type="submit" value="Enviar" class="btn btn-primary">
+        <div class="mb-3">
+            <label for="mensaje" class="form-label text-white">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
         </div>
-      </div>
-      
-    </form> 
-    {% endblock %}
+        <div class="text-center">
+            <input type="submit" value="Enviar" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+{% endblock %}

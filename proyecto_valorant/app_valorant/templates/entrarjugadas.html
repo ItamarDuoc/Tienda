@@ -1,20 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} entrar jugadas {% endblock %}
+{% block title %}Entrar Jugadas{% endblock %}
 
 {% block content %}
-<div class="card text-center" id="cardRegistro">
-    <div class="card-body">
-      <h5 class="card-title">Registro de jugadas</h5>
-      <p class="card-text nav-link active">Esta opcion te permitira registrar una jugada nuestro sistema. </p>
-      <a href="/jugadas_web/" class="btn btn-primary">Registrar jugada</a>
+<div class="container my-5">
+    <h2 class="text-center mb-4">Opciones de Jugadas</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card text-center bg-dark text-light border-light" id="cardRegistro">
+                <div class="card-body">
+                    <h5 class="card-title">Registro de Jugadas</h5>
+                    <p class="card-text" style="color: white !important;">Esta opción te permitirá registrar una jugada en nuestro sistema.</p>
+                    <a href="/jugadas_web/" class="btn btn-primary">Registrar Jugada</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card text-center bg-dark text-light border-light" id="cardBuscar">
+                <div class="card-body">
+                    <h5 class="card-title">Listar Jugadas</h5>
+                    <p class="card-text" style="color: white !important;">Esta opción te permitirá listar las jugadas ya registradas en nuestro sistema.</p>
+                    <a href="/listar_jugadas_web/" class="btn btn-primary">Listar Jugadas</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="card text-center" id="cardBuscar">
-    <div class="card-body">
-      <h5 class="card-title">listar jugadas</h5>
-      <p class="card-text nav-link active" >Esta opcion te permitira listar las jugadas ya registradas en nuestro sistema </p>
-      <a href="/listar_jugadas_web/" class="btn btn-primary">listar jugadas</a>
-    </div>
-  </div>
-  {% endblock %}
+</div>
+{% endblock %}

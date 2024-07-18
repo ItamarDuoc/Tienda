@@ -5,262 +5,118 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{%block title%}{% endblock %}</title>
+    <title>{% block title %}Valorant Wiki{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
-    <link rel="stylesheet " href="{% static 'css/styles.css' %}" id="dark-theme"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" id="dark-theme"/>
 </head>
 <body>
-    <h1 Class="text-center">VALORANT WIKI</h1>
-    <div class="container-md ">
-        <nav class="navbar navbar-expand-sm">
-            <div class="container-fluid">
-              <!-- Links -->
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="/index_web/">Index</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/agentes_web/">Agentes</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/armas_web/">Armas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link " href="/mapas_web/">Mapas</a>
-                </li>
-                  <a class="nav-link " href="/contacto_web/">Contacto</a>
-              </li>
-                <li class="nav-item">
-                <a class="nav-link " href="/entrar_creadores_web/">Creadores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="/entrar_jugadas_web/">Jugadas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/nosotros_web/">Nosotros</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/registro_web/">Registro</a>
-            </li>
-            </ul>
-            <ul class="nav navbar-right">
-                <button class="switch" id="switch">
-                    <span><i class="fa-solid fa-sun" id="spanSun"></i></span>
-                    <span><i class="fa-solid fa-moon" id="spanMoon"></i></span>
-                </button>
-            </ul>
-          </div>
-          </nav>
-        
-          {%block content%}{%endblock%}
-          <footer>
-            <script src="https://kit.fontawesome.com/5d36e69230.js" crossorigin="anonymous"></script>
-            <div class="container-fluid bg-dark p-3 text-white text-center">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img class="img-footer" src="{% static 'img/valorant-logo-svg.png' %}" width="200" height="200" alt="Logo">
-                    </div>
-                    <div class="col-md-4">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Index</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="agentes.html">Agentes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="armas.html">Armas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contacto.html">Contacto</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="nosotros.html">Nosotros</a>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <div class="centerClock">
-                            <div class="fechaReloj">
-                                <div class="fecha">
-                                    <p id="diaSemana" class="diaSemana"></p>
-                                    <p id="dia" class="dia"></p>
-                                    <p>de</p>
-                                    <p id="mes" class="mes"></p>
-                                    <p>del</p>
-                                    <p id="annio" class="annio"></p>
-                                </div>
-                                <div class="reloj">
-                                    <p id="horas" class="horas"></p>
-                                    <p id="temperatura"></p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="container-redes text-center col-md-4">
-                            <ul>
-                                <li> <a href="https://www.facebook.com/gaming/valorant" class="facebook"><i class="fab fa-facebook-f"></i> </a></li>
-                                <li> <a href="https://www.instagram.com/playvalorantofficial/" class="instagram"><i class="fab fa-instagram"></i> </a></li>
-                                <li> <a href="https://twitter.com/PlayVALORANT" class="twitter"><i class="fab fa-twitter"></i></a></li>
-                                <li> <a href="https://www.youtube.com/c/PlayVALORANT" class="youtube"><i class="fab fa-youtube"></i> </a></li>
-                            </ul>
-                        </div> 
-                        <div class="col-md-4"></div>      
-                        </div>               
-                    </div>
+    <header class="bg-dark text-white text-center py-4">
+        <h1 class="display-4">VALORANT WIKI</h1>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/index_web/">Index</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/agentes_web/">Agentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/armas_web/">Armas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mapas_web/">Mapas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacto_web/">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/radiant_points/">Comprar RP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/entrar_jugadas_web/">Jugadas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/nosotros_web/">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registro_web/">Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <img src="{% static 'img/valorant-logo-svg.png' %}" width="200" height="200" alt="Logo">
                 </div>
-        </footer>
-        
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
-        <script src="{% static 'js/openweather.js' %}"></script>
-        <script src="https://kit.fontawesome.com/5d36e69230.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="{% static 'js/valorantAgentes.js' %}"></script>
-        <script src="{% static 'js/reloj.js' %}"></script>
-        <script src="{% static 'js/modoOscuro.js' %}"></script>
-        <script src="{% static 'js/valorantArmas.js' %}"></script>
-        <script src="{% static 'js/valorantMapas.js' %}"></script>
-        {%block js%}{%endblock%}
-    </body>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <ul class="nav flex-column text-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/index_web/">Index</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/agentes_web/">Agentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/armas_web/">Armas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/contacto_web/">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/nosotros_web/">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="mb-3">
+                        <div class="fecha">
+                            <p id="diaSemana" class="mb-0"></p>
+                            <p id="dia" class="mb-0"></p>
+                            <p class="mb-0">de</p>
+                            <p id="mes" class="mb-0"></p>
+                            <p class="mb-0">del</p>
+                            <p id="annio" class="mb-0"></p>
+                        </div>
+                        <div class="reloj">
+                            <p id="horas" class="mb-0"></p>
+                            <p id="temperatura" class="mb-0"></p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled d-flex justify-content-center mb-0">
+                        <li class="mx-2"><a href="https://www.facebook.com/gaming/valorant" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="mx-2"><a href="https://www.instagram.com/playvalorantofficial/" class="text-white"><i class="fab fa-instagram"></i></a></li>
+                        <li class="mx-2"><a href="https://twitter.com/PlayVALORANT" class="text-white"><i class="fab fa-twitter"></i></a></li>
+                        <li class="mx-2"><a href="https://www.youtube.com/c/PlayVALORANT" class="text-white"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5d36e69230.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/openweather.js' %}"></script>
+    <script src="{% static 'js/valorantAgentes.js' %}"></script>
+    <script src="{% static 'js/reloj.js' %}"></script>
+    <script src="{% static 'js/modoOscuro.js' %}"></script>
+    <script src="{% static 'js/valorantArmas.js' %}"></script>
+    <script src="{% static 'js/valorantMapas.js' %}"></script>
+    {% block js %}{% endblock %}
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

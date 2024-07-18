@@ -1,57 +1,52 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} contacto {% endblock %}
-    
-  
-    {% block content %}
-    <form action="/registro/" method="post" class="form-container formulario">
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center text-white" style="color: black !important;">Registro</h2>
+    <form action="/registro/" method="post" class="form-container bg-dark p-4 rounded">
         {% csrf_token %}
-          <div class="mb-3">
-            <label for="" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre">
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Usuario</label>
-            <input type="text" class="form-control" id="usuario" name="usuario">
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Correo</label>
-            <input type="text" class="form-control" name="correo" id="correo">
-          </div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label text-white">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" pattern="[A-Za-z\s]{1,50}" title="El nombre solo puede contener letras y espacios. Máximo 50 caracteres." required>
         </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Nacionalidad</label>
-            <select name="nacionalidad" id="nacionalidad" class="form-select" >
-              <option value="1">Chileno</option>
-              <option value="2">Venenzolano</option>
-              <option value="3">Haitiano</option>
-              <option value="4">Colombiano</option>
-              <option value="5">Otro</option>
+        <div class="mb-3">
+            <label for="usuario" class="form-label text-white">Usuario</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" pattern="[A-Za-z0-9_]{3,20}" title="El usuario debe tener entre 3 y 20 caracteres y puede contener letras, números y guiones bajos." required>
+        </div>
+        <div class="mb-3">
+            <label for="correo" class="form-label text-white">Correo</label>
+            <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@dominio.com" required>
+        </div>
+        <div class="mb-3">
+            <label for="nacionalidad" class="form-label text-white">Nacionalidad</label>
+            <select name="nacionalidad" id="nacionalidad" class="form-select" required>
+                <option value="" disabled selected>Selecciona tu nacionalidad</option>
+                <option value="1">Chileno</option>
+                <option value="2">Venezolano</option>
+                <option value="3">Haitiano</option>
+                <option value="4">Colombiano</option>
+                <option value="5">Otro</option>
             </select>
-          </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <label for="" class="col-form-label">Edad</label>
-            <input type="text" class="form-control" id="edad" name="edad">
-          </div>
+        <div class="mb-3">
+            <label for="edad" class="col-form-label text-white">Edad</label>
+            <input type="number" class="form-control" id="edad" name="edad" min="1" max="120" step="1" required>
         </div>
-        <div class="row">
-          <div class="col">
-            <label for="" class="col-form-label">Contraseña</label>
-            <input type="password" class="form-control"  name="contrasena" id="contrasena">
-          </div>
-          <div class="col">
-            <label for="" class="col-form-label">Confirmar Contraseña</label>
-            <input type="password" class="form-control"  name="password_confirm" id="password_confirm">
-          </div>
+        <div class="row mb-3">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <label for="contrasena" class="col-form-label text-white">Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena" minlength="8" maxlength="20" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,20}" title="La contraseña debe tener entre 8 y 20 caracteres, y debe incluir al menos una letra mayúscula, una letra minúscula y un número." required>
+            </div>
+            <div class="col-md-6">
+                <label for="password_confirm" class="col-form-label text-white">Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="password_confirm" name="password_confirm" minlength="8" maxlength="20" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,20}" title="Las contraseñas deben coincidir y cumplir con los requisitos de seguridad." required>
+            </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <br>
+        <div class="text-center">
             <input type="submit" value="Enviar" class="btn btn-primary">
-          </div>
         </div>
-    
     </form>
-    {% endblock %}
+</div>
+{% endblock %}
