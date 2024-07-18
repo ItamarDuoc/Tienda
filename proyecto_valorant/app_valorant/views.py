@@ -143,3 +143,6 @@ def nosotros_web(request):
 
 def mapas_web(request):
     return render(request,"mapas.html")
+
+def radiant_points(request):
+    return render(request, 'radiant_points.html')

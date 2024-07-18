@@ -42,7 +42,6 @@ urlpatterns = [
     path('entrar_jugadas_web/',views.entrar_jugadas),
     path('entrar_creadores_web/',views.entrar_creadores),
     path('nosotros_web/',views.nosotros_web),
-    path('mapas_web/',views.mapas_web)
-    
-
+    path('mapas_web/',views.mapas_web),
+    path('radiant_points/', views.radiant_points),
 ]
