@@ -1,27 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} contacto {% endblock %}
+{% block title %}Inicio de Sesión{% endblock %}
 
-    {% block content %}
-    <form action="/login/" method="post" class="form-container">
-    {% csrf_token %}
-    <div class="row">
-        <div class="col">
-            <label for="Usuario" class="form-label">Usuario</label>
-            <input type="text" class="form-control" name="usuario" id="usuario">
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="color: #000000;">Inicio de Sesión</h2>
+    <form action="/login/" method="post" class="form-container bg-dark p-4 rounded">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col">
+                <label for="usuario" class="form-label" style="color: #f8f9fa;">Usuario</label>
+                <input type="text" class="form-control" name="usuario" id="usuario" required>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="contrasena" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" name="contrasena" id="contrasena">
+        <br>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="contrasena" class="form-label" style="color: #f8f9fa;">Contraseña</label>
+                <input type="password" class="form-control" name="contrasena" id="contrasena" required>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-          <br>
-          <input type="submit" value="Enviar" class="btn btn-primary">
+        <div class="row">
+            <div class="col text-center">
+                <input type="submit" value="Enviar" class="btn btn-primary">
+            </div>
         </div>
-      </div>
     </form>
-    {% endblock %}
+</div>
+{% endblock %}
