@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Venta de Radiant Points{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Carrito de compra</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="amount" class="form-label">Cantidad de Radiant Points</label>
+            <input type="number" class="form-control" id="amount" name="amount" readonly required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="card_number" class="form-label">Número de Tarjeta</label>
+            <input type="text" class="form-control" id="card_number" name="card_number" pattern="\d{16}" placeholder="1234 5678 1234 5678" required>
+            <small class="form-text text-muted">Debe ser un número de 16 dígitos.</small>
+        </div>
+        <div class="mb-3">
+            <label for="expiry_date" class="form-label">Fecha de Vencimiento</label>
+            <input type="text" class="form-control" id="expiry_date" name="expiry_date" pattern="\d{2}/\d{2}" placeholder="MM/AA" required>
+            <small class="form-text text-muted">Formato: MM/AA.</small>
+        </div>
+        <div class="mb-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input type="text" class="form-control" id="cvv" name="cvv" pattern="\d{3}" placeholder="123" required>
+            <small class="form-text text-muted">Código de 3 dígitos en la parte trasera de la tarjeta.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Comprar</button>
+    </form>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get('amount');
+        if (amount) {
+            document.getElementById('amount').value = amount;
+        }
+    });
+</script>
+{% endblock %}

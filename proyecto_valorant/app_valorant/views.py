@@ -146,3 +146,6 @@ def mapas_web(request):
 
 def radiant_points(request):
     return render(request, 'radiant_points.html')
+
+def carrito(request):
+    return render(request, 'carrito.html')

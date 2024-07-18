@@ -44,4 +44,5 @@ urlpatterns = [
     path('nosotros_web/',views.nosotros_web),
     path('mapas_web/',views.mapas_web),
     path('radiant_points/', views.radiant_points),
+    path('carrito/', views.carrito)
 ]
