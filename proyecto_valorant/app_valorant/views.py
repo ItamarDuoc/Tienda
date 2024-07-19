@@ -96,30 +96,6 @@ def listar_jugadas(request):
     datos = mapas.objects.all()
     return render(request,"listar_jugadas.html",{'informacion':datos})
 
-def creadores(request):
-    nombre=request.GET["creador"]
-    rango=request.GET["rango"]
-    estilo=request.GET["estilo"]
-    main=request.GET["agente"]
-    if len(nombre)>0 and len(rango)>0 and len(estilo)>0 and len(main):
-        info=Creadores(nombre=nombre, rango=rango, estilo_juego=estilo, agente_main=main)
-        info.save()
-        messages.info(request,'creador ingresado con exito')
-    else:
-        messages.info(request,'creador no se ha ingresado con exito')
-    return HttpResponseRedirect("/listar_creador/")
-
-def listar_creador(request):
-    datos = Creadores.objects.all()
-    return render(request,"listar_creadores.html",{'informacion':datos})
-
-
-def registrar_creador_web(request):
-    return render(request,"registrar_creador.html")
-
-def listar_creador_web(request):
-    return render(request,"listar_creadores.html")
-
 def base(request):
     return render(request,"base.html")
 
@@ -134,9 +110,6 @@ def armas_web(request):
 
 def entrar_jugadas(request):
     return render(request,"entrarjugadas.html")
-
-def entrar_creadores(request):
-    return render(request,"entradacreadores.html")
 
 def nosotros_web(request):
     return render(request,"nosotros.html")
